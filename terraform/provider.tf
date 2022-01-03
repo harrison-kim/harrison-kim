@@ -2,7 +2,7 @@ terraform {
   cloud {
     organization = "harrison-kim"
     workspaces {
-      name = "harrison-kim"
+      tags = ["harrison"]
     }
   }
   required_providers {
@@ -11,6 +11,8 @@ terraform {
       version = "~> 4.0"
     }
   }
+
+  required_version = "~> 1.1.2"
 }
 
 # use env var `GITHUB_TOKEN`
