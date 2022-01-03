@@ -2,7 +2,7 @@ terraform {
   cloud {
     organization = "harrison-kim"
     workspaces {
-      prefix = "harrison-kim"
+      tags = ["harrison"]
     }
   }
   required_providers {
