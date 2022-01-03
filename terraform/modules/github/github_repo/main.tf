@@ -33,8 +33,4 @@ resource "github_branch_protection" "protection" {
   required_status_checks {
     strict = true
   }
-
-  required_pull_request_reviews {
-    required_approving_review_count = 1
-  }
 }
