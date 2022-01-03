@@ -34,3 +34,18 @@ resource "github_branch_protection" "protection" {
     strict = true
   }
 }
+
+resource "github_repository_webhook" "webhook" {
+  for_each   = var.webhooks
+  repository = github_repository.repo.name
+
+  configuration {
+    url          = each.value.url
+    content_type = each.value.content_type
+    insecure_ssl = each.value.insecure_ssl
+    secret       = each.value.secret
+  }
+
+  active = each.value.active
+  events = each.value.events
+}

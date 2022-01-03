@@ -33,3 +33,9 @@ variable "homepage_url" {
   type    = string
   default = ""
 }
+
+variable "webhooks" {
+  type        = map(any)
+  description = "A list of webhooks for the GitHub repo"
+  default     = {}
+}
